@@ -45,15 +45,20 @@ Widget AppTextForm({
       onFieldSubmitted: onSubmitted,
       onChanged: onChanged,
       decoration: InputDecoration(
-          labelText: '$label',
-          prefixIcon: Icon(
-            prefixIcon,
-          ),
-          suffixIcon: suffixIcon != null
-              ? IconButton(onPressed: suffixPressed, icon: Icon(suffixIcon))
-              : null,
-      border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(30.0),
-    ),)
-,
-validator: validator,);
+        labelText: '$label',
+        prefixIcon: Icon(
+          prefixIcon,
+        ),
+        suffixIcon: suffixIcon != null
+            ? IconButton(onPressed: suffixPressed, icon: Icon(suffixIcon))
+            : null,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(width: 3, color: Color.fromRGBO(0, 117, 94, 1)),
+        ),
+      ),
+      validator: validator,
+    );
