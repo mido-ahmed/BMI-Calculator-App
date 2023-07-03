@@ -9,7 +9,7 @@ Widget AppButton({
     Container(
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(30.0),
       ),
       width: width,
       height: 40.0,
