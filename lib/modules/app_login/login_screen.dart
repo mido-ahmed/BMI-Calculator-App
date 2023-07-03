@@ -1,3 +1,4 @@
+import 'package:bmi_calculator_app/modules/app_register/register_screen.dart';
 import 'package:bmi_calculator_app/modules/bmi/bmi_home_screen.dart';
 import 'package:bmi_calculator_app/shared/components/components.dart';
 import 'package:flutter/material.dart';
@@ -102,42 +103,41 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 20.0),
-                    child: AppButton(
-                        text: "login",
-                        backgroundColor: Color.fromRGBO(0, 117, 94, 1),
-                        function: () {
-                          if (formKey.currentState!.validate()) {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => BMIHomeScreen(),
-                            ));
-                          } else {
-                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content: const Text(
-                                  'Enter Your informations correctly'),
-                              duration: const Duration(seconds: 3),
-                              action: SnackBarAction(
-                                label: 'WARNING',
-                                onPressed: () {
-                                  return;
-                                },
-                              ),
-                            ));
-                          }
-                        }),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    child: Column(
                       children: [
-                        Text(
-                          'Don\'t have an account?',
-                        ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Register Now',
-                          ),
+                        AppButton(
+                            text: "login",
+                            backgroundColor: Color.fromRGBO(0, 117, 94, 1),
+                            function: () {
+                              if (formKey.currentState!.validate()) {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => BMIHomeScreen(),
+                                ));
+                              } else {
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(
+                                  content: const Text(
+                                      'Enter Your informations correctly'),
+                                  duration: const Duration(seconds: 3),
+                                  action: SnackBarAction(
+                                    label: 'WARNING',
+                                    onPressed: () {
+                                      return;
+                                    },
+                                  ),
+                                ));
+                              }
+                            }),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10.0),
+                          child: AppButton(
+                              text: "REGISTER",
+                              backgroundColor: Color.fromRGBO(0, 117, 94, 1),
+                              function: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => RegisterScreen(),
+                                ));
+                              }),
                         ),
                       ],
                     ),
