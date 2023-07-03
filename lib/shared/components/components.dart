@@ -8,7 +8,7 @@ Widget AppButton({
 }) =>
     Container(
       decoration: BoxDecoration(
-        color: backgroundColor,
+        color: Color.fromRGBO(7, 171, 179, 1),
         borderRadius: BorderRadius.circular(30.0),
       ),
       width: width,
