@@ -17,9 +17,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'BMI Calculator App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      theme: ThemeData.dark().copyWith(
+        primaryColor: const Color(
+          0xFF0A0E21,
+        ),
+        scaffoldBackgroundColor: const Color(
+          0xFF0A0E21,
+        ),
       ),
       home: SafeArea(
         child: LoginScreen(),
