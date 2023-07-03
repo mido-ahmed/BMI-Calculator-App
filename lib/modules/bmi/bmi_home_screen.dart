@@ -29,7 +29,7 @@ class _BMIHomeScreenState extends State<BMIHomeScreen> {
           "BMI CALCULATOR",
           style: TextStyle(
             color: Colors.white,
-            fontSize: 20,
+            fontSize: 25,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -156,7 +156,7 @@ class _BMIHomeScreenState extends State<BMIHomeScreen> {
                     ],
                   ),
                   Slider(
-                    activeColor: isMale ? Colors.blue : Colors.purple,
+                    activeColor: Colors.pink,
                     value: height,
                     min: 40.0,
                     max: 220.0,
@@ -329,8 +329,8 @@ class _BMIHomeScreenState extends State<BMIHomeScreen> {
                             )));
               },
               child: Text(
-                "Calculate",
-                style: TextStyle(color: Colors.white),
+                "CALCULATE",
+                style: TextStyle(color: Colors.white , fontSize: 25),
               ),
             ),
           ),
