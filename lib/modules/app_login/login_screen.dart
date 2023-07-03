@@ -32,9 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network(
-                      'https://play-lh.googleusercontent.com/c8fb2ryOVMPC4bbtyeq16-bISTi-K7wRECf6xh_U0OLUhxOtRAVdH5RzEjGdQ78KVaI',
-                      width: 250),
+                  Image.asset('assets/images/perm-01 1.png', width: 300),
                   Text(
                     'Login',
                     style: TextStyle(
@@ -65,44 +63,41 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                         }),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20.0),
-                    child: AppTextForm(
-                      validateError:
-                          "Please Make it more secure and should have #",
-                      validateDone: "Enter your Password",
-                      onSubmitted: (String value) {
-                        print(value);
-                      },
-                      onChanged: (String value) {
-                        print(value);
-                      },
-                      isSecure: isPasswordShow,
-                      textType: TextInputType.visiblePassword,
-                      prefixIcon: Icons.lock,
-                      suffixIcon: isPasswordShow
-                          ? Icons.visibility
-                          : Icons.visibility_off,
-                      suffixPressed: () {
-                        setState(() {
-                          isPasswordShow = !isPasswordShow;
-                        });
-                      },
-                      label: "Password",
-                      controller: passwordController,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return "Enter your Password";
-                        } else if (value.length < 8 && !value.contains("#")) {
-                          return "Please Make it more secure and should have #";
-                        } else {
-                          return null;
-                        }
-                      },
-                    ),
+                  AppTextForm(
+                    validateError:
+                        "Please Make it more secure and should have #",
+                    validateDone: "Enter your Password",
+                    onSubmitted: (String value) {
+                      print(value);
+                    },
+                    onChanged: (String value) {
+                      print(value);
+                    },
+                    isSecure: isPasswordShow,
+                    textType: TextInputType.visiblePassword,
+                    prefixIcon: Icons.lock,
+                    suffixIcon: isPasswordShow
+                        ? Icons.visibility
+                        : Icons.visibility_off,
+                    suffixPressed: () {
+                      setState(() {
+                        isPasswordShow = !isPasswordShow;
+                      });
+                    },
+                    label: "Password",
+                    controller: passwordController,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "Enter your Password";
+                      } else if (value.length < 8 && !value.contains("#")) {
+                        return "Please Make it more secure and should have #";
+                      } else {
+                        return null;
+                      }
+                    },
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 20.0),
+                    padding: const EdgeInsets.only(top: 10.0),
                     child: Column(
                       children: [
                         AppButton(
