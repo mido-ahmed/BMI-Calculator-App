@@ -13,7 +13,7 @@ class BMIHomeScreen extends StatefulWidget {
 class _BMIHomeScreenState extends State<BMIHomeScreen> {
   bool isMale = true;
   String? gender;
-  double height = 120;
+  double height = 135;
   dynamic weight = 90;
   int age = 20;
   String? statue;
@@ -156,7 +156,7 @@ class _BMIHomeScreenState extends State<BMIHomeScreen> {
                     ],
                   ),
                   Slider(
-                    activeColor: Colors.pink,
+                    activeColor: Colors.red,
                     value: height,
                     min: 40.0,
                     max: 220.0,
@@ -209,8 +209,7 @@ class _BMIHomeScreenState extends State<BMIHomeScreen> {
                                 });
                               },
                               heroTag: 'weight-',
-                              backgroundColor:
-                                  isMale ? Colors.blue : Colors.purple,
+                              backgroundColor: Colors.grey,
                               child: Icon(
                                 Icons.remove,
                               ),
@@ -223,8 +222,7 @@ class _BMIHomeScreenState extends State<BMIHomeScreen> {
                                 });
                               },
                               heroTag: 'weight+',
-                              backgroundColor:
-                                  isMale ? Colors.blue : Colors.purple,
+                              backgroundColor: Colors.grey,
                               child: Icon(Icons.add),
                               mini: true,
                             ),
@@ -269,8 +267,7 @@ class _BMIHomeScreenState extends State<BMIHomeScreen> {
                                   age--;
                                 });
                               },
-                              backgroundColor:
-                                  isMale ? Colors.blue : Colors.purple,
+                              backgroundColor: Colors.grey,
                               child: Icon(
                                 Icons.remove,
                               ),
@@ -283,8 +280,7 @@ class _BMIHomeScreenState extends State<BMIHomeScreen> {
                                   age++;
                                 });
                               },
-                              backgroundColor:
-                                  isMale ? Colors.blue : Colors.purple,
+                              backgroundColor: Colors.grey,
                               child: Icon(Icons.add),
                               heroTag: 'age+',
                               mini: true,
@@ -330,7 +326,7 @@ class _BMIHomeScreenState extends State<BMIHomeScreen> {
               },
               child: Text(
                 "CALCULATE",
-                style: TextStyle(color: Colors.white , fontSize: 25),
+                style: TextStyle(color: Colors.white, fontSize: 25),
               ),
             ),
           ),
