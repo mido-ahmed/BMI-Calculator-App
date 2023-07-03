@@ -38,27 +38,33 @@ Widget AppTextForm({
   void Function(String value)? onChanged,
   void Function()? suffixPressed,
 }) =>
-    TextFormField(
-      controller: controller,
-      obscureText: isSecure,
-      keyboardType: textType,
-      onFieldSubmitted: onSubmitted,
-      onChanged: onChanged,
-      decoration: InputDecoration(
-        labelText: '$label',
-        prefixIcon: Icon(
-          prefixIcon,
+    Container(
+      height: 80,
+      child: TextFormField(
+        controller: controller,
+        obscureText: isSecure,
+        keyboardType: textType,
+        onFieldSubmitted: onSubmitted,
+        onChanged: onChanged,
+        decoration: InputDecoration(
+          labelText: '$label',
+          prefixIcon: Icon(
+            prefixIcon,
+          ),
+          suffixIcon: suffixIcon != null
+              ? IconButton(onPressed: suffixPressed, icon: Icon(suffixIcon))
+              : null,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30.0),
+            borderSide: BorderSide(
+              width: 1,
+              color: Colors.black,
+            ),
+          ),
         ),
-        suffixIcon: suffixIcon != null
-            ? IconButton(onPressed: suffixPressed, icon: Icon(suffixIcon))
-            : null,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30.0),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide:
-              BorderSide(width: 3, color: Color.fromRGBO(0, 117, 94, 1)),
-        ),
+        validator: validator,
       ),
-      validator: validator,
     );
