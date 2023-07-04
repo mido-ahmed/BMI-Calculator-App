@@ -18,12 +18,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'BMI Calculator App',
       theme: ThemeData.dark().copyWith(
-        primaryColor: const Color(
-          0xFF0A0E21,
-        ),
-        scaffoldBackgroundColor: const Color(
-          0xFF0A0E21,
-        ),
+        primaryColor: const Color(0xFF3D4149),
+        scaffoldBackgroundColor: const Color(0xFF3D4149),
       ),
       home: SafeArea(
         child: LoginScreen(),

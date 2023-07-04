@@ -26,11 +26,11 @@ class _BMIResultScreenState extends State<BMIResultScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.red,
+        backgroundColor: Color(0xFF3B4B4).withOpacity(0.3),
         title: Text(
           "BMI RESULT",
           style: TextStyle(
-            color: Colors.white,
+            color: Color(0xFFEAEAEA),
             fontSize: 25,
             fontWeight: FontWeight.bold,
           ),
@@ -49,6 +49,7 @@ class _BMIResultScreenState extends State<BMIResultScreen> {
               'Your Result',
               style: TextStyle(
                 fontSize: 50,
+                color: Color(0xFFEAEAEA),
                 fontWeight: FontWeight.w900,
               ),
             ),
@@ -59,9 +60,7 @@ class _BMIResultScreenState extends State<BMIResultScreen> {
               height: 500,
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: Color(
-                    0xFF1D1E33,
-                  ),
+                  color: Color(0xFF3B4B4).withOpacity(0.3),
                   borderRadius: BorderRadius.circular(30),
                   border: Border.all(
                     color: Colors.black,
@@ -79,7 +78,7 @@ class _BMIResultScreenState extends State<BMIResultScreen> {
                   Text(
                     "Result : ${widget.userResult!.round()}",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Color(0xFFEAEAEA),
                       fontSize: 35.0,
                       fontWeight: FontWeight.bold,
                     ),
@@ -88,20 +87,28 @@ class _BMIResultScreenState extends State<BMIResultScreen> {
                     "${widget.userAdvice}",
                     maxLines: 2,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25.0, color: Colors.white),
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      color: Color(0xFFEAEAEA),
+                    ),
                   ),
                   Text(
-                    "${widget.userGender}",
+                    "${widget.userGender?.toUpperCase()}",
                     style: const TextStyle(
                       fontSize: 35.0,
-                      color: Colors.white,
+                      color: Color(0xFFEAEAEA),
                     ),
                   ),
                   Text(
                     "Age : ${widget.userAge}",
                     maxLines: 2,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 25.0, color: Colors.white),
+                    style: TextStyle(
+                      fontSize: 25.0,
+                      color: Color(
+                        0xFFEAEAEA,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -109,7 +116,7 @@ class _BMIResultScreenState extends State<BMIResultScreen> {
           ),
           Container(
             width: double.infinity,
-            color: Colors.red,
+            color: Color(0xFF3B4B4).withOpacity(0.3),
             child: MaterialButton(
               height: 50.0,
               onPressed: () {
@@ -118,7 +125,7 @@ class _BMIResultScreenState extends State<BMIResultScreen> {
               },
               child: Text(
                 "RE-CALCULATE",
-                style: TextStyle(color: Colors.white , fontSize: 25),
+                style: TextStyle(color: Color(0xFFEAEAEA), fontSize: 25),
               ),
             ),
           ),

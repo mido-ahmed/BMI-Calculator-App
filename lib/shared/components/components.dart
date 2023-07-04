@@ -48,11 +48,17 @@ Widget AppTextForm({
         onChanged: onChanged,
         decoration: InputDecoration(
           labelText: '$label',
+          labelStyle: TextStyle(color: Color(0xFFEAEAEA), fontSize: 16),
           prefixIcon: Icon(
             prefixIcon,
+            color: Color(0xFFEAEAEA),
           ),
           suffixIcon: suffixIcon != null
-              ? IconButton(onPressed: suffixPressed, icon: Icon(suffixIcon))
+              ? IconButton(
+                  onPressed: suffixPressed,
+                  icon: Icon(suffixIcon),
+                  color: Color(0xFFEAEAEA),
+                )
               : null,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30.0),
@@ -61,10 +67,100 @@ Widget AppTextForm({
             borderRadius: BorderRadius.circular(30.0),
             borderSide: BorderSide(
               width: 1,
-              color: Colors.black,
+              color: Color(0xFFEAEAEA),
             ),
           ),
         ),
         validator: validator,
+      ),
+    );
+
+Widget HomeGenderCard({
+  @required String? label,
+  @required IconData? icon,
+  @required bool? isMale,
+  @required Color? background,
+}) =>
+    Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            icon,
+            size: 135.0,
+            color: Color(0xFFEAEAEA),
+          ),
+          const SizedBox(height: 5.0),
+          Text(
+            "$label",
+            style: TextStyle(
+                fontSize: 25.0,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFEAEAEA)),
+          ),
+        ],
+      ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12.0),
+        color: background,
+      ),
+    );
+
+Widget HomeValuesCard({
+  @required String? label,
+  String? tagOne,
+  String? tagTwo,
+  @required int? value,
+  @required VoidCallback? functionOne,
+  @required VoidCallback? functionTwo,
+}) =>
+    Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12.0),
+          color: Color(0xFF3B4B4).withOpacity(0.3)),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "$label",
+            style: TextStyle(
+              fontSize: 25.0,
+              color: Color(0xFFEAEAEA),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            "${value}",
+            style: TextStyle(
+                fontSize: 40.0,
+                fontWeight: FontWeight.w900,
+                color: Color(0xFFEAEAEA)),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FloatingActionButton(
+                onPressed: functionOne,
+                heroTag: '$tagOne',
+                backgroundColor: Colors.grey,
+                child: Icon(
+                  Icons.remove,
+                  color: Color(0xFFEAEAEA),
+                ),
+                mini: true,
+              ),
+              FloatingActionButton(
+                onPressed: functionTwo,
+                heroTag: '$tagTwo',
+                backgroundColor: Colors.grey,
+                child: Icon(
+                  Icons.add,
+                  color: Color(0xFFEAEAEA),
+                ),
+                mini: true,
+              ),
+            ],
+          )
+        ],
       ),
     );
